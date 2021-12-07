@@ -2,7 +2,21 @@
 {% block title %}Space Exploration Portal{% endblock %}
 
 {% block content %}
+  <img height = "100px"  src = "https://www.nasa.gov/sites/default/files/thumbnails/image/nasa-logo-web-rgb.png">
   <h1 class="display-4">Image of the Day:</h1>
+
+  <form method="get" >
+    <label for = "Date">Date of Photo: </label>
+    <input min = "2003-06-10" max = "{{current_date}}" name = "Date" type ="date">
+    <select name = "rover">
+      <option value = "curiosity">Curiosity</option>
+      <option value = "perseverance">Perseverance</option>
+      <option value = "opportunity">Opportunity</option>
+      <option value = "spirit">Spirit</option>
+    </select>
+    <input type = "submit" value = "Submit">
+  </form>
+
 
   <img src="{{ landing_image }}">
 {% endblock %}
